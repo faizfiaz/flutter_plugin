@@ -52,7 +52,8 @@ class AuthenticationOptions {
           useErrorDialogs == other.useErrorDialogs &&
           stickyAuth == other.stickyAuth &&
           sensitiveTransaction == other.sensitiveTransaction &&
-          biometricOnly == other.biometricOnly;
+          biometricOnly == other.biometricOnly &&
+          requestBiometric == other.requestBiometric;
 
   @override
   int get hashCode => Object.hash(
@@ -60,5 +61,6 @@ class AuthenticationOptions {
         stickyAuth,
         sensitiveTransaction,
         biometricOnly,
+        requestBiometric,
       );
 }

@@ -45,6 +45,7 @@ public class AuthenticationHelperTest {
           .setSensitiveTransaction(false)
           .setSticky(false)
           .setUseErrorDialgs(false)
+          .setRequestBiometric("none")
           .build();
 
   @Test

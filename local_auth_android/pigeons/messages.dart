@@ -77,11 +77,13 @@ class AuthOptions {
       {required this.biometricOnly,
       required this.sensitiveTransaction,
       required this.sticky,
-      required this.useErrorDialgs});
+      required this.useErrorDialgs,
+      required this.requestBiometric});
   final bool biometricOnly;
   final bool sensitiveTransaction;
   final bool sticky;
   final bool useErrorDialgs;
+  final String requestBiometric;
 }
 
 /// Pigeon equivalent of the subset of BiometricType used by Android.
