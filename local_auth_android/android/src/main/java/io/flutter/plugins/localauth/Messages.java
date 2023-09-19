@@ -490,7 +490,7 @@ public class Messages {
 
     @NonNull
     ArrayList<Object> toList() {
-      ArrayList<Object> toListResult = new ArrayList<Object>(4);
+      ArrayList<Object> toListResult = new ArrayList<Object>(5);
       toListResult.add(biometricOnly);
       toListResult.add(sensitiveTransaction);
       toListResult.add(sticky);
