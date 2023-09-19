@@ -90,6 +90,9 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
     }
 
     if (allowCredentials) {
+      allowedAuthenticators =
+              BiometricManager.Authenticators.BIOMETRIC_WEAK
+                  | BiometricManager.Authenticators.BIOMETRIC_STRONG;
       allowedAuthenticators |= BiometricManager.Authenticators.DEVICE_CREDENTIAL;
     } else {
       promptBuilder.setNegativeButtonText(strings.getCancelButton());
