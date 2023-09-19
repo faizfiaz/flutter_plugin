@@ -470,6 +470,13 @@ public class Messages {
         return this;
       }
 
+      private @Nullable String requestBiometric;
+
+      public @NonNull Builder setRequestBiometric(@NonNull String setterArg) {
+        this.requestBiometric = setterArg;
+        return this;
+      }
+
       public @NonNull AuthOptions build() {
         AuthOptions pigeonReturn = new AuthOptions();
         pigeonReturn.setBiometricOnly(biometricOnly);
