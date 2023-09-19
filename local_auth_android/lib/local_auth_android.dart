@@ -40,7 +40,9 @@ class LocalAuthAndroid extends LocalAuthPlatform {
             biometricOnly: options.biometricOnly,
             sensitiveTransaction: options.sensitiveTransaction,
             sticky: options.stickyAuth,
-            useErrorDialgs: options.useErrorDialogs),
+            useErrorDialgs: options.useErrorDialogs,
+            requestBiometric: options.requestBiometric
+            ),
         _pigeonStringsFromAuthMessages(localizedReason, authMessages));
     // TODO(stuartmorgan): Replace this with structured errors, coordinated
     // across all platform implementations, per
