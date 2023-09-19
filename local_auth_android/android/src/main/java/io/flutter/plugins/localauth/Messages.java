@@ -375,9 +375,9 @@ public class Messages {
 
   /** Generated class from Pigeon that represents data sent in messages. */
   public static final class AuthOptions {
-    private String requestBiometric;
+    private @NonNull String requestBiometric;
 
-    public String getRequestBiometric() {
+    public @NonNull String getRequestBiometric() {
       return requestBiometric;
     }
 
