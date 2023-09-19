@@ -77,13 +77,13 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
             .setSubtitle(strings.getBiometricHint())
             .setConfirmationRequired(options.getSensitiveTransaction());
     int allowedAuthenticators = 0;
-    if (requestBiometric == "none"){
+    if (requestBiometric.contains("none")){
       allowedAuthenticators =
               BiometricManager.Authenticators.BIOMETRIC_WEAK
                   | BiometricManager.Authenticators.BIOMETRIC_STRONG;
     }else{
       if (requestBiometric == "fingerprint"){
-         allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
+         allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_WEAK;
       }else{
          allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
       }
