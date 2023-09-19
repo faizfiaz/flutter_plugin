@@ -82,10 +82,10 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
               BiometricManager.Authenticators.BIOMETRIC_WEAK
                   | BiometricManager.Authenticators.BIOMETRIC_STRONG;
     }else{
-      if (requestBiometric == "fingerprint"){
-         allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_WEAK;
-      }else{
+      if (requestBiometric.contains("fingerprint") ){
          allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
+      }else{
+         allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_WEAK;
       }
     }
 
