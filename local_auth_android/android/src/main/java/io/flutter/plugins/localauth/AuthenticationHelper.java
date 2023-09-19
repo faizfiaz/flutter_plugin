@@ -75,9 +75,10 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
             .setSubtitle(strings.getBiometricHint())
             .setConfirmationRequired(options.getSensitiveTransaction());
 
-    int allowedAuthenticators =
-        BiometricManager.Authenticators.BIOMETRIC_WEAK
-            | BiometricManager.Authenticators.BIOMETRIC_STRONG;
+    // int allowedAuthenticators =
+    //     BiometricManager.Authenticators.BIOMETRIC_WEAK
+    //         | BiometricManager.Authenticators.BIOMETRIC_STRONG;
+    int allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
 
     if (allowCredentials) {
       allowedAuthenticators |= BiometricManager.Authenticators.DEVICE_CREDENTIAL;
