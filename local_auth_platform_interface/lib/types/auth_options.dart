@@ -13,6 +13,7 @@ class AuthenticationOptions {
     this.stickyAuth = false,
     this.sensitiveTransaction = true,
     this.biometricOnly = false,
+    this.requestBiometric = 'none',
   });
 
   /// Whether the system will attempt to handle user-fixable issues encountered
@@ -40,6 +41,8 @@ class AuthenticationOptions {
   /// Prevent authentications from using non-biometric local authentication
   /// such as pin, passcode, or pattern.
   final bool biometricOnly;
+
+  final String requestBiometric;
 
   @override
   bool operator ==(Object other) =>

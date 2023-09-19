@@ -28,6 +28,7 @@ class DefaultLocalAuthPlatform extends LocalAuthPlatform {
       'stickyAuth': options.stickyAuth,
       'sensitiveTransaction': options.sensitiveTransaction,
       'biometricOnly': options.biometricOnly,
+      'requestBiometric': options.requestBiometric,
     };
     for (final AuthMessages messages in authMessages) {
       args.addAll(messages.args);

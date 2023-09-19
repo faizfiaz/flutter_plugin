@@ -13,6 +13,11 @@ import io.flutter.plugin.common.BasicMessageChannel;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MessageCodec;
 import io.flutter.plugin.common.StandardMessageCodec;
+import io.flutter.plugins.localauth.Messages.AuthClassificationWrapper;
+import io.flutter.plugins.localauth.Messages.AuthOptions;
+import io.flutter.plugins.localauth.Messages.AuthResult;
+import io.flutter.plugins.localauth.Messages.AuthStrings;
+
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -370,6 +375,16 @@ public class Messages {
 
   /** Generated class from Pigeon that represents data sent in messages. */
   public static final class AuthOptions {
+    private String requestBiometric;
+
+    public String getRequestBiometric() {
+      return requestBiometric;
+    }
+
+    public void setRequestBiometric(String setterArg) {
+      this.requestBiometric = setterArg;
+    }
+
     private @NonNull Boolean biometricOnly;
 
     public @NonNull Boolean getBiometricOnly() {
@@ -485,6 +500,8 @@ public class Messages {
       pigeonResult.setSticky((Boolean) sticky);
       Object useErrorDialgs = list.get(3);
       pigeonResult.setUseErrorDialgs((Boolean) useErrorDialgs);
+      Object requestBiometric = list.get(4);
+      pigeonResult.setRequestBiometric((String) requestBiometric);
       return pigeonResult;
     }
   }

@@ -52,6 +52,7 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
   private final UiThreadExecutor uiThreadExecutor;
   private boolean activityPaused = false;
   private BiometricPrompt biometricPrompt;
+  private final String requestBiometric;
 
   AuthenticationHelper(
       Lifecycle lifecycle,
@@ -67,6 +68,7 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
     this.isAuthSticky = options.getSticky();
     this.useErrorDialogs = options.getUseErrorDialgs();
     this.uiThreadExecutor = new UiThreadExecutor();
+    this.requestBiometric = options.getRequestBiometric();
 
     BiometricPrompt.PromptInfo.Builder promptBuilder =
         new BiometricPrompt.PromptInfo.Builder()
@@ -74,11 +76,18 @@ class AuthenticationHelper extends BiometricPrompt.AuthenticationCallback
             .setTitle(strings.getSignInTitle())
             .setSubtitle(strings.getBiometricHint())
             .setConfirmationRequired(options.getSensitiveTransaction());
-
-    // int allowedAuthenticators =
-    //     BiometricManager.Authenticators.BIOMETRIC_WEAK
-    //         | BiometricManager.Authenticators.BIOMETRIC_STRONG;
-    int allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
+    int allowedAuthenticators = 0;
+    if (requestBiometric == "none"){
+      allowedAuthenticators =
+              BiometricManager.Authenticators.BIOMETRIC_WEAK
+                  | BiometricManager.Authenticators.BIOMETRIC_STRONG;
+    }else{
+      if (requestBiometric == "fingerprint"){
+         allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
+      }else{
+         allowedAuthenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG;
+      }
+    }
 
     if (allowCredentials) {
       allowedAuthenticators |= BiometricManager.Authenticators.DEVICE_CREDENTIAL;
