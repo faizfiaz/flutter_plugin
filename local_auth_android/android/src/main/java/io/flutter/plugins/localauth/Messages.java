@@ -476,6 +476,7 @@ public class Messages {
         pigeonReturn.setSensitiveTransaction(sensitiveTransaction);
         pigeonReturn.setSticky(sticky);
         pigeonReturn.setUseErrorDialgs(useErrorDialgs);
+        pigeonReturn.setRequestBiometric(requestBiometric);
         return pigeonReturn;
       }
     }
@@ -487,6 +488,7 @@ public class Messages {
       toListResult.add(sensitiveTransaction);
       toListResult.add(sticky);
       toListResult.add(useErrorDialgs);
+      toListResult.add(requestBiometric);
       return toListResult;
     }
 
